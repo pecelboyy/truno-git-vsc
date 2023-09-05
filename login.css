@@ -1,0 +1,108 @@
+body {
+  background: #000;
+}
+body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background: url("background.jpg");
+  background-position: center;
+}
+nav {
+  position: fixed;
+  padding: 25px 60px;
+  z-index: 1;
+}
+nav a img {
+  width: 167px;
+}
+.satu {
+  position: absolute;
+  left: 50%;
+  border: 50%;
+  border-radius: 4px;
+  padding: 70px;
+  width: 450px;
+  transform: translate(-50%, 50%);
+  background: rgba(0, 0, 0, 0.75);
+}
+.satu h2 {
+  color: #fff;
+  font-size: 2rem;
+}
+.satu form {
+  margin: 25px 0 65px;
+}
+.dua input {
+  height: 100%;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 20px;
+}
+.dua input:is(:focus, :valid) {
+  background: #444;
+  padding: 16px 20px 0;
+}
+.dua label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  color: #8c8c8c;
+  transition: all 0.1s ease;
+}
+.dua input:is(:focus, :valid) ~ label {
+  font-size: 0.75rem;
+  transform: translateY(-130%);
+}
+form button:hover {
+  background: #c40812;
+}
+.satu a {
+  text-decoration: none;
+}
+.satu a:hover {
+  text-decoration: underline;
+}
+.satu :where(label, p, a) {
+  color: #b3b3b3;
+}
+form .tiga {
+  display: flex;
+  justify-content: space-between;
+}
+form .empat {
+  display: flex;
+}
+form .empat input {
+  margin-right: 5px;
+  accent-color: #b3b3b3;
+}
+form .tiga :where(label, a) {
+  font-size: 0.9rem;
+}
+.satu p a {
+  color: #fff;
+}
+.satu small {
+  display: block;
+  margin-top: 15px;
+  color: #b3b3b3;
+}
+.satu small a {
+  color: #0071eb;
+}
+@media (max-width: 740px) body::before {
+  display: none;
+}
